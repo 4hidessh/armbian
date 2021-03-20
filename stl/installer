@@ -1,7 +1,7 @@
 #!/bin/bash
 #stl (Wegare)
 printf 'ctrl+c' | crontab -e > /dev/null
-opkg update && opkg install unzip
+apt update && apt install unzip
 cek=$(cat /etc/openwrt_r*)
 if [[ $cek == *"LEDE"* ]] && [[ $cek == *"ar71xx"* ]]; then
 wget --no-check-certificate "https://github.com/wegare123/backup/blob/main/lede/ar71xx.zip?raw=true" -O ~/ekstrak.zip && unzip ~/ekstrak.zip && cp ~/ar71xx/*.ipk ~/ && rm -rf ~/ekstrak.zip && rm -rf ~/ar71xx
